@@ -11,12 +11,9 @@ module.exports = function (app) {
   app.post("/api/friends", function (req, res) {
     var userInput = req.body;
     var userScores = userInput.scores;
-    // var rickRoll = "../data/assets/video.mp4";
-    // var rickRoll2 = "../data/assets/song.mp3";
+    var userName = userInput.name;
 
-    // var rickRoll3 = `<iframe width="100%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://play.google.com/music/m/Tazi6x7hjg23a2cdkm7prn7bqyy?t=Never_Gonna_Give_You_Up_-_Rick_Astley"></iframe>`;
-
-    var rickRoll4 = `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&loop=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    var rickRoll = `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&loop=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 
     var match = "";
     var matchedFriend = "";
@@ -55,11 +52,18 @@ module.exports = function (app) {
     friends.push(userInput);
 
     console.log(diffArray);
-    if(userInput.name === "Travis") {
+    var travis = userName.substring(0, 7);
+    var userTravis = "Travis Thompson";
+    userTravis = userTravis.substring(0, 7);
+    userTravis = userTravis.toLowerCase();
+    console.log(userTravis);
+    travis = travis.toLowerCase();
+    if(travis === userTravis) {
+      console.log(travis);
       res.json({
         name: "Rick Astley",
         photo: "https://media.giphy.com/media/a6OnFHzHgCU1O/giphy.gif",
-        song: rickRoll4,
+        song: rickRoll,
         astley: true
       });
     }else {
