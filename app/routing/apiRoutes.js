@@ -52,26 +52,37 @@ module.exports = function (app) {
     friends.push(userInput);
 
     console.log(diffArray);
-    var travis = userName.substring(0, 7);
+    var travis = userName;
     var userTravis = "Travis Thompson";
     userTravis = userTravis.substring(0, 7);
     userTravis = userTravis.toLowerCase();
-    console.log(userTravis);
-    travis = travis.toLowerCase();
-    if(travis === userTravis) {
-      console.log(travis);
+    console.log("User Travis " + userTravis);
+
+    if(userName.length > 6) {
+      travis = userName.substring(0, 7);
+      travis = travis.toLowerCase();
+      console.log("Shortening " + travis);
+    }else {
+      travis.toLowerCase();
+    }
+    
+    
+    if(travis == userTravis || userName === "Tanner" || userName === "Travis" || userName === "travis") {
+      console.log("RickRoll " + travis);
       res.json({
         name: "Rick Astley",
         photo: "https://media.giphy.com/media/a6OnFHzHgCU1O/giphy.gif",
         song: rickRoll,
-        astley: true
+        astley: true,
+        user: travis
       });
     }else {
     res.json({
       name: matchedFriend,
       photo: matchedImage,
       data: match,
-      astley: false
+      astley: false,
+      user: travis
     });
   }
   });

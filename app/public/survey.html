@@ -178,7 +178,7 @@
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="" width="400px">
+          <img id="match-img" src="" alt="" width="400px">
         </div>
         <div class="modal-footer">
             <button type="button" id="rickRollDismiss" class="btn btn-primary" data-toggle="modal" data-target="#rickRollModal">
@@ -280,10 +280,12 @@
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           
           if(data.astley === true) {
+            console.log(data.user);
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);
             $("#song-box").html(data.song);
           }else if(data.astley === false) {
+            
             $("#rickRollDismiss").remove();
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);
