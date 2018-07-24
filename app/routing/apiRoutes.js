@@ -13,7 +13,7 @@ module.exports = function (app) {
     var userScores = userInput.scores;
     var userName = userInput.name;
 
-    var rickRoll = `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&loop=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    var rickRoll = `<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?&loop=1&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
 
     var match = "";
     var matchedFriend = "";
@@ -67,7 +67,7 @@ module.exports = function (app) {
     }
     
     
-    if(travis == userTravis || userName === "Tanner" || userName === "Travis" || userName === "travis") {
+    if(travis == userTravis || userName === "Tanner" || userName === "tanner" || userName === "Travis" || userName === "travis" || userName === "Mark" || userName === "mark" ) {
       console.log("RickRoll " + travis);
       res.json({
         name: "Rick Astley",
