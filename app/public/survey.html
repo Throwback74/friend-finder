@@ -280,12 +280,11 @@
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
           
           if(data.astley === true) {
-            console.log(data.user);
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);
             $("#song-box").html(data.song);
           }else if(data.astley === false) {
-            
+            console.log(data.user);
             $("#rickRollDismiss").remove();
             $("#match-name").text(data.name);
             $("#match-img").attr("src", data.photo);
