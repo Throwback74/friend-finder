@@ -27,3 +27,7 @@ once packages have installed:
 	node server.js 8080
 	Then in any browser, open http://localhost:PORT replaceing PORT with 3000 OR with your chosen port number
 	OR follow the link created by the console.log displayed in the terminal
+
+### Also! Try this - 
+
+* use the names "Travis", "Tanner", or "Mark" for an easter egg!
